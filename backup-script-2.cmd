@@ -27,6 +27,8 @@ REM Redirect nul to suppress output as echo off don't work on net use
 REM Do not use DEST variable in net use command as it may not work
 NET USE "\\server\d$\dest_location" /user:%user% %pass% >nul 
 
+
+REM ATTENTION!!!! PURGE WILL DELETE FILE from DESTINATION as it will be a mirror image of source 
 ROBOCOPY %SRC% %DEST% /E /PURGE /MT:20 /R:10 /Log:Log_location\%LOG_FILE%
 
 REM Disconnecting network session for next use
