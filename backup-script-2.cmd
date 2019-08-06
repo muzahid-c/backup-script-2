@@ -4,8 +4,16 @@ REM For net use authentication, destination server user and password
 SET user=user
 SET pass=password
 
-REM Setting date format legal for file name in windows 
-SET LOGFILE_DATE=%DATE:~7,2%-%DATE:~4,2%-%DATE:~10,4%
+REM Before running this code check the date format in windows and remove REM in below line where necessary
+
+REM If date format is (dd-mmm-yy) then use below code by removing REM in below line
+REM SET LOGFILE_DATE=%DATE%
+
+REM If date format is (dd/mmm/yyyy) then use below code by removing REM in below line
+REM SET LOGFILE_DATE=%DATE:~-4,4%-%DATE:~-8,3%-%DATE:~-11,2%
+
+REM If date format is (m/dd/yyy) then use below code removing REM in below line
+REM SET LOGFILE_DATE=%DATE:~10,4%-%DATE:~4,2%-%DATE:~7,2%
 
 REM For avoiding space in time 
 SET hour=%time:~0,2%
