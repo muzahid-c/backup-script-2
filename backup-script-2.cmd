@@ -19,7 +19,10 @@ SET LOGFILE_TIME=%hour%-%min%-%secs%
 
 SET LOG_FILE=Backup_%LOGFILE_DATE%_%LOGFILE_TIME%.log
 
+REM Source location is in Local Drive
 SET SRC="Source_Location"
+
+REM Destination location is in remote server
 SET DEST="\\server\d$\dest_location"
 
 REM Trying to connect using user and pass of remote destination
